@@ -1,0 +1,46 @@
+{# templates/university/list.html.twig #}
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Universities</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+	</head>
+
+	<body class="bg-gray-100">
+
+		<div class="container mx-auto px-4 py-10">
+
+			<h1 class="text-4xl font-bold text-center mb-10 text-gray-800">
+				🎓 Universities
+			</h1>
+
+			<div class="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6">
+
+				{% for uni in universities %}
+					<div class="bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition">
+
+						<h2 class="text-xl font-semibold text-gray-900 mb-2">
+							{{ uni.name }}
+						</h2>
+
+						<p class="text-gray-600 mb-4">
+							🌍
+							{{ uni.country }}
+						</p>
+
+						{%  for tab in uni.url %}
+							<a href="{{ tab.url }}" target="_blank" class="inline-block bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition">
+								Visit Website
+							</a>
+						{% endfor %}
+					</div>
+				{% endfor %}
+
+			</div>
+
+		</div>
+
+	</body>
+</html>

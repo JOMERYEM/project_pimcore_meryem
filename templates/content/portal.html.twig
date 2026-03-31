@@ -1,0 +1,18 @@
+
+{% extends "layout/default.html.twig" %}
+{% do pimcore_head_title('Test Title') %}
+
+{% block content %}
+<div class="container">
+    <div class="box">
+        <h1>🚀 {{ pimcore_input('headline') }}</h1>
+           {{ pimcore_wysiwyg('content') }}
+         
+        <p>Si tu vois cette page, tout est OK.</p>
+        <button onclick="alert('Bravo 🎉')">Tester</button>
+
+          {{ pimcore_link('button1',{class:'btn btn-primary'}) }}
+         
+    </div>
+</div>
+{% endblock %}

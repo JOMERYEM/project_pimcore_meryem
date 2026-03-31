@@ -1,0 +1,30 @@
+{% extends 'layout/default.html.twig' %}
+
+{% block content %}
+
+	<div class="d-flex align-items-center h-100 py-4 bg-body-tertiary">
+		<main class="form-signin w-100 m-auto">
+			<form method="post">
+				<input type="hidden" name="_target_path" value="{{ path("dashboard") }}">
+
+				<h1 class="h3 mb-3 fw-normal">Pimcorecasts <br> Auth Login</h1>
+
+				<div class="form-floating">
+					<input type="email" name="_username" class="form-control" id="floating-email" placeholder="name@example.com">
+					<label for="floating-email">E-Mail address</label>
+				</div>
+				<div class="form-floating">
+					<input type="password" name="_password" class="form-control" id="floating-password" placeholder="password">
+					<label for="floating-password">Password</label>
+				</div>
+
+				<div class="d-flex gap-3">
+					<button type="submit" class="btn btn-primary w-100 py-2">Sign in</button>
+					<a href="{{ path("simple_auth_register") }}" class="btn btn-secondary">Register</a>
+				</div>
+
+			</form>
+		</main>
+	</div>
+
+{% endblock %}

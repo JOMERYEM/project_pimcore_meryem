@@ -1,0 +1,47 @@
+{% extends 'layout/default.html.twig' %}
+
+{% block content %}
+
+	<div class="d-flex align-items-center h-100 py-4 bg-body-tertiary">
+		<main class="form-register w-100 m-auto">
+			<form method="post" name="submit">
+				<h1 class="h3 mb-3 fw-normal">Pimcorecasts
+					<br>
+					Auth Register</h1>
+
+				{% for message in app.flashes('success') %}
+					<div class="alert alert-success">
+						{{ message }}
+					</div>
+				{% endfor %}
+
+				{% for message in app.flashes('error') %}
+					<div class="alert alert-danger">
+						{{ message }}
+					</div>
+				{% endfor %}
+
+				<div class="form-floating">
+					<input type="email" name="email" class="form-control top-input" id="floating-email" placeholder="name@example.com">
+					<label for="floating-email">E-Mail address</label>
+				</div>
+
+				<div class="form-floating">
+					<input type="password" name="password" class="form-control center-input" id="floating-password" placeholder="password">
+					<label for="floating-password">Password</label>
+				</div>
+
+				<div class="form-floating">
+					<input type="password" name="passwordConfirm" class="form-control bottom-input" id="floating-password-confirm" placeholder="password">
+					<label for="floating-password-confirm">Password Confirm</label>
+				</div>
+
+				<div class="d-flex gap-3">
+					<button type="submit" class="btn btn-primary w-100 py-2" name="submit">Save</button>
+				</div>
+
+			</form>
+		</main>
+	</div>
+
+{% endblock %}
